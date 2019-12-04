@@ -3,7 +3,6 @@
     <h2>{{guest.name}}</h2>
     <p>Email Address: {{guest.emailAddress}}</p>
     <p v-if="guest.checkInStatus">Checked In</p>
-    <!-- <p>I'm a guest card</p> -->
   </div>
 </template>
 
