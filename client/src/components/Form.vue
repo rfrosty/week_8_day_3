@@ -4,12 +4,12 @@
     <input type="text" id="name" v-model="name" required>
 
     <label for="emailAddress">Email:</label>
-    <input type="text" id="emailAddress" v-model="emailAddress">
+    <input type="text" id="emailAddress" v-model="emailAddress" required>
 
-    <label for="true">Checked In</label>
+    <label for="true">Checked In?</label>
     <input type="radio" id="true" v-model="checkInStatus" value="true">
 
-    <label for="false">Not Checked In</label>
+    <label for="false">Not Checked In?</label>
     <input type="radio" id="false" v-model="checkInStatus" value="false">
 
     <input type="submit" value="Add Guest"/>
@@ -37,12 +37,17 @@ export default {
         emailAddress: this.emailAddress,
         checkInStatus: this.checkInStatus
       }
+
       GuestService.postGuest(guest)
         .then(res => eventBus.$emit('guest-added', res))
+        .then(this.name = this.emailAddress = this.checkInStatus = '')
     }
   }
 }
 </script>
 
 <style lang="css" scoped>
+input {
+  display: block;
+}
 </style>
