@@ -5,16 +5,16 @@ db.guests.insertMany([
   {
     name: "Sophia",
     emailAddress: "sophia@whatever.com",
-    checkInStatus: true
+    checkInStatus: "true"
   },
   {
     name: "Iain",
     emailAddress: "iain@nowhere.com",
-    checkInStatus: false
+    checkInStatus: "false"
   },
   {
     name: "Ryan",
     emailAddress: "ryan@elsewhere.com",
-    checkInStatus: true
+    checkInStatus: "true"
   }
 ]);

@@ -7,6 +7,8 @@
 <script>
 import GuestService from '../services/GuestService.js';
 import GuestCard from './GuestCard.vue';
+import {eventBus} from '../main.js'
+
 export default {
   data(){
   return {
@@ -16,6 +18,10 @@ export default {
 mounted(){
   GuestService.getGuests()
     .then(guests => this.guests = guests);
+
+  eventBus.$on('guest-added', (guest) => {
+    this.guests.push(guest)
+  })
 },
 components: {
   'guest-card': GuestCard

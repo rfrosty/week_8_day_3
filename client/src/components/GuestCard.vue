@@ -2,7 +2,8 @@
   <div>
     <h2>{{guest.name}}</h2>
     <p>Email Address: {{guest.emailAddress}}</p>
-    <p v-if="guest.checkInStatus">Checked In</p>
+    <p v-if="guest.checkInStatus === 'true' ">Checked In</p>
+    <p v-else="">Not Checked In</p>
   </div>
 </template>
 

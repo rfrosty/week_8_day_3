@@ -7,10 +7,12 @@
     <input type="text" id="emailAddress" v-model="emailAddress">
 
     <label for="true">Checked In</label>
-    <input type="radio" id="true" v-model="emailAddress" value="true">
+    <input type="radio" id="true" v-model="checkInStatus" value="true">
 
     <label for="false">Not Checked In</label>
-    <input type="radio" id="false" v-model="emailAddress" value="false">
+    <input type="radio" id="false" v-model="checkInStatus" value="false">
+
+    <input type="submit" value="Add Guest"/>
   </form>
 </template>
 
@@ -24,7 +26,7 @@ export default {
     return {
       name: '',
       emailAddress: '',
-      checkInStatus: false
+      checkInStatus: ""
     }
   },
   methods: {
