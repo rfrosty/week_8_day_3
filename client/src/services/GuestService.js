@@ -18,10 +18,13 @@ export default {
       method: 'DELETE'
     })
   },
-  // updateGuest(id){
-  //   return fetch(baseURL + id, {
-  //     method: 'PUT'
-  //   })
-  // }
+  updateGuest(id){
+    return fetch(baseURL + id, {
+      method: 'PUT',
+      body: JSON.stringify(payload),
+      headers: { 'Content-Type': 'application/json'}
+    })
+    .then(res => res.json())
+  }
 
 }

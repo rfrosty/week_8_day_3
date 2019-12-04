@@ -5,6 +5,7 @@
     <p v-if="guest.checkInStatus === 'true' ">Checked In</p>
     <p v-else="">Not Checked In</p>
     <button type="button" v-on:click="deleteGuest">Delete</button>
+    <button type="button" v-on:click="toggleCheckIn">Check In/Out</button>
   </div>
 </template>
 
@@ -20,6 +21,10 @@ export default {
     deleteGuest(){
       GuestService.deleteGuest(this.guest._id)
         .then(() => eventBus.$emit('guest-deleted', this.guest._id))
+    },
+    toggleCheckIn(){
+      GuestService.updateGuest(this.guest._id)
+        .then(() => )
     }
   }
 }
